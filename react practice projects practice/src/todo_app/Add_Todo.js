@@ -1,63 +1,40 @@
 import { useState } from "react";
 
+const Add_Todo = ({addTodo}) => {
+  const [todos, setTodos] = useState("");
 
-const Add_Todo = () => {
-  
+  //  Submitting the values
 
-     const [todos , setTodos] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    setTodos("");
+  };
 
-    //  Submitting the values 
+  const handleTodos = (e) => {
+    setTodos(e.target.value);
 
-      const handleSubmit = (e) => {
+     // Get all input  in an array
+  };
 
-           e.preventDefault();
+  return (
+    <>
+      {/* Creating an input box which allows to type todo and display them */}
 
-           setTodos('');
+      <div>
+        <form autoComplete="off" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="todos"
+            value={todos}
+            onChange={(e) => handleTodos(e)}
+          />
 
-           alert(todos);
-       
-      }
-
-
-      const handleTodos = (e) => {
-
-        //    console.log(e.target.value, 'val');
-
-        //    console.log(e.target.name, 'name');
-
-
-           setTodos(e.target.value);
-            
-              
-      }
-
-      return (
-           <>
-            {/* Creating an input box which allows to type todo and display them */}
-
-
-             <div>
-
-                 <form autoComplete="off" onSubmit={handleSubmit}>
-
-                 <input type='text' name='todos' value={todos} onChange={(e) => handleTodos(e)}/>
-                
-                 <button type="submit">Add</button>
-            
-                
-                
-                 </form>
-
-                 {/* <h2>{todos}</h2> */}
-                 
-             </div>
-           
-           </>
-      )
-
-       
-}
-
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </>
+  );
+};
 
 export default Add_Todo;
