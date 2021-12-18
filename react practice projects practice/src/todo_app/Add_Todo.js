@@ -15,6 +15,8 @@ const Add_Todo = ({addTodo}) => {
     setTodos(e.target.value);
 
      // Get all input  in an array
+     addTodo(todos);
+
   };
 
   return (

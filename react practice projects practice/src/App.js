@@ -8,6 +8,13 @@ function App() {
     const [added_todos , setAdded_todos] = useState([]);
 
     const addTodo = (todoDetails) => {
+
+
+        let todoArr = [...added_todos];
+
+        todoArr.push(todoDetails);
+
+        setAdded_todos(todoArr);
       
           
              
