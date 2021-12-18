@@ -8,14 +8,19 @@ const Add_Todo = ({addTodo}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    
+     // Get all input  in an array
+
+    addTodo(todos); 
+
     setTodos("");
+
   };
 
   const handleTodos = (e) => {
     setTodos(e.target.value);
 
-     // Get all input  in an array
-     addTodo(todos);
+     
 
   };
 
@@ -32,7 +37,7 @@ const Add_Todo = ({addTodo}) => {
             onChange={(e) => handleTodos(e)}
           />
 
-          <button type="submit">Add</button>
+          <button>Add</button>
         </form>
       </div>
     </>
