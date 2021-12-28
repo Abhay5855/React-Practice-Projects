@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -6,6 +6,19 @@ import { useState } from "react";
 const Effect = () => {
 
          const [currentDate , setCurrentdate] = useState(new Date());
+
+
+         useEffect(() => {
+
+              const timer = setTimeout(() => {
+
+                   setCurrentdate(new Date());
+                   
+              },1000)
+
+              return() => clearTimeout(timer);
+              
+         })
 
        return (
 
