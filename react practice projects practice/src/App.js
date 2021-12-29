@@ -1,5 +1,6 @@
 // import { useState } from 'react/cjs/react.development';
 import './App.css';
+import Ref_Counter from './ref/Ref_Counter';
 // import Border_Previewer from './border_radius_previewer/Border_Previewer';
 // import Layout from './context/Layout';
 // import Effect from './effect/Effect';
@@ -47,7 +48,9 @@ function App() {
 
       {/* <Reference /> */}
 
-      <Timer />     
+      {/* <Timer /> */}
+
+      <Ref_Counter />
     </div>
   );
 }
