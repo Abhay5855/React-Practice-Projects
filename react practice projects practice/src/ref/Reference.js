@@ -12,9 +12,25 @@ const Reference = () => {
          const inputOne = useRef();
 
          const inputTwo = useRef();
+
+        const handleOne = () => {
+
+             inputOne.current.style.width = '400px';
+
+           
+             
+               
+        }
+
+        const handleTwo = () => {
+
+            
+             
+        }
+
            
 
-         console.log(inputOne.current);
+        //  console.log(inputOne.current);
 
 
          return (
@@ -24,10 +40,10 @@ const Reference = () => {
              
              <h2>Use ref hook</h2>
 
-             <input type='number'  ref={inputOne} value={val1}/>
+             <input type='number'  ref={inputOne} value={val1} onChange={(e) => setVal1(e.target.value)}/>
 
              <br/>
-             <input type='text'  ref={inputTwo} value={val2}/>
+             <input type='text'  ref={inputTwo} value={val2} onChange={(e) => setVal2(e.target.value)}/>
 
              <br />
 
