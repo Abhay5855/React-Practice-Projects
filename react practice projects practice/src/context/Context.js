@@ -4,14 +4,31 @@
 //  creating the context, providing the context, 
 //  and consuming the context.
 
+import Layout from "./Layout";
+import {MainContext} from "./MainContext";
+
 const Context = () => {
 
 
-      
+      const userName = 'Heena raj';
 
         return (
 
-            <></>
+            <>
+
+            <MainContext.Provider value={userName}>
+
+                 <Layout>Main Content</Layout>
+
+                
+
+            </MainContext.Provider>
+
+
+
+
+            
+            </>
 
         )
 }
