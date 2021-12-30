@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState , useMemo} from "react";
 
-
+import List from "./List";
 
 
 
@@ -9,7 +9,7 @@ const Memo = () => {
 
 
     const [text , setText] = useState('');
-    const [search , setSearch] = useState();
+    const [search , setSearch] = useState('');
 
 
     const users = [
@@ -40,10 +40,17 @@ const Memo = () => {
 
     const filteredUsers = users.filter((user) => {
 
-        return user.name.toLowerCase().includes(search.toLowerCase())
+        console.log('filter function is running');
+
+        return user.name.toLowerCase().includes(search.toLowerCase());
 
          
-    })
+    });
+
+
+
+
+
 
      return (
          <>
@@ -52,6 +59,9 @@ const Memo = () => {
          <input type='text' value={text} onChange={(e) => setText(e.target.value)} />
 
          <button onClick={() => Search()}>Search</button>
+
+
+         <List list={filteredUsers} />
          
          </>
      )
