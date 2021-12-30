@@ -7,6 +7,7 @@ import Ref_Counter from './ref/Ref_Counter';
 // import Effect from './effect/Effect';
 // import Reference from './ref/Reference';
 import Timer from './ref/Timer';
+import Tags from './tags/Tags';
 // import Add_Todo from './todo_app/Add_Todo';
 // import Convert from './todo_app/binary_to_decimal/Convert';
 // import Todo_List from './todo_app/Todo_List';
@@ -53,7 +54,9 @@ function App() {
 
       {/* <Ref_Counter /> */}
 
-      <Memo />
+      {/* <Memo /> */}
+
+      <Tags />
     </div>
   );
 }
