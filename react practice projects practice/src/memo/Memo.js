@@ -38,19 +38,40 @@ const Memo = () => {
 
     // Filter
 
-    const filteredUsers = users.filter((user) => {
 
-        console.log('filter function is running');
+    
 
-        return user.name.toLowerCase().includes(search.toLowerCase());
+    // const filteredUsers = users.filter((user) => {
+
+    //     console.log('filter function is running');
+
+    //     return user.name.toLowerCase().includes(search.toLowerCase());
 
          
-    });
+    // });
+
+
+    const filteredUsers = useMemo(() => 
+
+      users.filter((user) => {
+             console.log('render again');
+            return user.name.toLowerCase().includes(search.toLowerCase());
+      }),
+
+      [search]
+    
+    )
+
+    // const filteredUsers = useMemo(() => {
+        
+
+         
+    // }, [search])
 
 
 
 
-
+     
 
      return (
          <>

@@ -1,8 +1,11 @@
+import Listitem from "./Listitem";
 
 
 
 
 const List = ({list}) => {
+
+    console.log('list' , list);
 
           return (
               <>
@@ -12,7 +15,7 @@ const List = ({list}) => {
                       list.map((item) => {
                               
                              return (
-                                   <li>{item.name}</li>
+                                 <Listitem key={item.id} item={item} />
                              )
                       })
                   }
