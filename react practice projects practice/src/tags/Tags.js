@@ -9,6 +9,11 @@ const Tags = () => {
        const [input , setInput] = useState('');
 
        const [tags , setTags] = useState([]);
+       
+
+    //    State to check the key is down or up
+
+    const [isPressed , setisPressed] = useState(false);
 
 
 
@@ -50,16 +55,44 @@ const Tags = () => {
 
         }
 
+
+        // set the is press state
+
+        setisPressed(false);
          
                
        }
+
+
+       const onKeyUp = () => {
+
+             setisPressed(true);
+             
+       }
+
+
+    //    Delete functionality 
+
+     const handleDelete = (idx) => {
+             
+
+         setTags(prev => prev.filter((tag , i) => i !== idx));
+
+        
+
+
+        
+          
+
+                  
+     }
 
 
       return (
           <>
           <h2>project to create Tags</h2>
 
-          <input value={input} onChange={(e) => setInput(e.target.value)} type='text' onKeyDown={onKeyDown}/>
+          <input value={input} onChange={(e) => setInput(e.target.value)} type='text' onKeyDown={onKeyDown} onKeyUp={onKeyUp}/>
 
           <ul>
 
@@ -69,7 +102,16 @@ const Tags = () => {
                     return (
                         <div key={idx}>
 
-                            <li>{item}</li>
+                            <li>
+                                
+                                {item}
+                                
+
+                                <button onClick={() => handleDelete(idx)}>Delete</button>
+                                
+                                </li>
+
+                                
 
                             
 

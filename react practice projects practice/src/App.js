@@ -1,5 +1,6 @@
 // import { useState } from 'react/cjs/react.development';
 import './App.css';
+import Birthday from './birthday/Birthday';
 import Memo from './memo/Memo';
 import Ref_Counter from './ref/Ref_Counter';
 // import Border_Previewer from './border_radius_previewer/Border_Previewer';
@@ -56,7 +57,9 @@ function App() {
 
       {/* <Memo /> */}
 
-      <Tags />
+      {/* <Tags /> */}
+
+      <Birthday />
     </div>
   );
 }
