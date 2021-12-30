@@ -33,6 +33,19 @@ const Tags = () => {
 
         if(key === 'Backspace' && !input.length && tags.length){
 
+              e.preventDefault();
+
+
+              const tagsCopy = [...tags];
+
+              const poppedElement = tagsCopy.pop();
+
+              setTags(tagsCopy);
+
+              setInput(poppedElement);
+
+
+
 
 
         }
