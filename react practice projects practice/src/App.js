@@ -1,6 +1,8 @@
 // import { useState } from 'react/cjs/react.development';
 import './App.css';
 import Birthday from './birthday/Birthday';
+import ExpenseContainer from './expense_tracker.js/ExpenseContainer';
+import MyMap from './localeai/MyMap';
 import Memo from './memo/Memo';
 import Ref_Counter from './ref/Ref_Counter';
 // import Border_Previewer from './border_radius_previewer/Border_Previewer';
@@ -9,6 +11,7 @@ import Ref_Counter from './ref/Ref_Counter';
 // import Reference from './ref/Reference';
 import Timer from './ref/Timer';
 import Tags from './tags/Tags';
+import Tours from './tours_project/Tours';
 // import Add_Todo from './todo_app/Add_Todo';
 // import Convert from './todo_app/binary_to_decimal/Convert';
 // import Todo_List from './todo_app/Todo_List';
@@ -59,7 +62,13 @@ function App() {
 
       {/* <Tags /> */}
 
-      <Birthday />
+      {/* <Birthday /> */}
+
+      {/* <Tours /> */}
+
+      {/* <MyMap /> */}
+
+      <ExpenseContainer />
     </div>
   );
 }
