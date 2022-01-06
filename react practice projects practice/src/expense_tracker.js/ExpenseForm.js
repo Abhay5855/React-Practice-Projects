@@ -77,7 +77,7 @@ const ExpenseForm = () => {
               
           </div>
 
-          <ExpenseList all={all} setAll={setAll}/>
+          <ExpenseList all={all} setAll={setAll} setAmount={setAmount} setCharge={setCharge}/>
         </form>
       </div>
     </>

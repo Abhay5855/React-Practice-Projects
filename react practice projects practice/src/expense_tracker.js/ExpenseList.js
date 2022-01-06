@@ -1,4 +1,8 @@
-const ExpenseList = ({ all, setAll }) => {
+import PropTypes from 'prop-types'
+
+
+
+const ExpenseList = ({ all, setAll , setAmount , setCharge}) => {
   // clear all list
 
   const ClearAll = () => {
@@ -11,10 +15,16 @@ const DeleteItem =(idx) => {
  
     
     setAll(prev => prev.filter((data , i) => i !== idx));
-
-
-
      
+}
+
+
+// Edit item
+const EditItem = (data) => {
+    
+    setAmount(data);
+       
+        
 }
   return (
     <>
@@ -30,7 +40,7 @@ const DeleteItem =(idx) => {
                 <span>$ {item.amount}</span>
 
                 <button onClick={() => DeleteItem(idx)}>Delete</button>
-                <button>Edit</button>
+                <button onClick={() => EditItem(item.amount)}>Edit</button>
               </div>
             );
           })}
@@ -52,6 +62,10 @@ const DeleteItem =(idx) => {
       </div>
     </>
   );
+
+
 };
+
+
 
 export default ExpenseList;

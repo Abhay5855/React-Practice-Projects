@@ -4,6 +4,7 @@ import Birthday from './birthday/Birthday';
 import ExpenseContainer from './expense_tracker.js/ExpenseContainer';
 import MyMap from './localeai/MyMap';
 import Memo from './memo/Memo';
+import NotesContainer from './notes-app/NotesContainer';
 import Ref_Counter from './ref/Ref_Counter';
 // import Border_Previewer from './border_radius_previewer/Border_Previewer';
 // import Layout from './context/Layout';
@@ -68,7 +69,11 @@ function App() {
 
       {/* <MyMap /> */}
 
-      <ExpenseContainer />
+      {/* <ExpenseContainer /> */}
+
+      <NotesContainer />
+
+      
     </div>
   );
 }
