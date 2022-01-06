@@ -5,14 +5,22 @@ import ExpenseList from "./ExpenseList";
 const ExpenseContainer = () => {
 
 
+        const AllExpense = (expense) => {
+
+               
+               
+               
+        }
+
+
     return (
 
      <>
 
 
-      <ExpenseForm />
+      <ExpenseForm AllExpense={AllExpense}/>
 
-       <ExpenseList />
+       {/* <ExpenseList /> */}
 
      </>
     )

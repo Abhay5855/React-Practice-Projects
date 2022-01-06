@@ -1,10 +1,16 @@
 import ExpenseContainer from "./ExpenseContainer";
 import { useState } from "react";
+import ExpenseList from "./ExpenseList";
 
 const ExpenseForm = () => {
   const [charge, setCharge] = useState('');
 
   const [amount, setAmount] = useState();
+
+  
+  const [all , setAll] = useState([]);
+
+
 
 
 //handle form
@@ -17,6 +23,23 @@ const ExpenseForm = () => {
 
          console.log('amount added ');
          console.log(charge + '-> ' + amount);
+
+
+         const addAll = {
+                
+                  charge : charge,
+                  amount : amount ,
+         }
+
+         setAll([...all ,addAll]);
+
+        // setAllexpenses.push(addAll);
+
+
+        //    console.log('all' ,allExpenses);
+      
+     
+          console.log('all' , all);
 
     }
 
@@ -53,6 +76,8 @@ const ExpenseForm = () => {
              <button type="submit">submit</button>
               
           </div>
+
+          <ExpenseList all={all} amount={amount}/>
         </form>
       </div>
     </>
