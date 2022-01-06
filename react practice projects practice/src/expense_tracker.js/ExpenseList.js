@@ -1,6 +1,19 @@
-import { type } from "@testing-library/user-event/dist/type";
 
-const ExpenseList = ({ all , amount}) => {
+
+const ExpenseList = ({ all , setAll}) => {
+
+
+    // clear all list
+
+      const ClearAll = () => {
+
+
+           setAll([]);
+
+        
+
+             
+      }
   return (
     <>
       <div>
@@ -23,9 +36,9 @@ const ExpenseList = ({ all , amount}) => {
           })}
         </div>
 
-      
+                
                <span className="total">
-          $
+         Total Amount : $
           {/* {all.reduce((acc, curr) => {
             return (acc += curr.amount);
           }, 0)} */}
@@ -43,6 +56,8 @@ const ExpenseList = ({ all , amount}) => {
 
           }
         </span>
+
+        <br />
 
 
         <button onClick={ClearAll}>Clear All</button>
