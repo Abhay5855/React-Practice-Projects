@@ -2,6 +2,7 @@
 import './App.css';
 import Birthday from './birthday/Birthday';
 import ExpenseContainer from './expense_tracker.js/ExpenseContainer';
+import Reducer from './hooks/Reducer';
 import MyMap from './localeai/MyMap';
 import Memo from './memo/Memo';
 import NotesContainer from './notes-app/NotesContainer';
@@ -71,9 +72,11 @@ function App() {
 
       {/* <ExpenseContainer /> */}
 
-      <NotesContainer />
+      {/* <NotesContainer /> */}
 
-      
+      <Reducer />
+
+    
     </div>
   );
 }

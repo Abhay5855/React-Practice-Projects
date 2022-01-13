@@ -3,31 +3,30 @@ import "leaflet/dist/leaflet.css";
 import data from "./data.json";
 
 const MyMap = () => {
-       
+  const onAreas = (area, layer) => {
+    const areaName = area.properties.name;
 
-     const onAreas = (area, layer) => {
+    const pincode = area.properties.pin_code;
 
-          const areaName = area.properties.name;
+    console.log(areaName + pincode);
 
-          const pincode = area.properties.pin_code;
+    layer.bindPopup(areaName + "" + pincode);
+  };
 
-          console.log(areaName + pincode);
-
-          layer.bindPopup(areaName  + '' + pincode);
-
-          
-     }
-
-     
   return (
     <>
-      <MapContainer style={{ height: "100vh" , width : '100vw'}} zoom={3} center={[20, 100]}  scrollWheelZoom={false}>
+      <MapContainer
+        style={{ height: "100vh", width: "100vw" }}
+        zoom={3}
+        center={[20, 100]}
+        scrollWheelZoom={false}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <GeoJSON data={data} onEachFeature={onAreas}/>
+        <GeoJSON data={data} onEachFeature={onAreas} />
       </MapContainer>
     </>
   );

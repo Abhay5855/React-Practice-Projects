@@ -1,81 +1,70 @@
 import { useState } from "react/cjs/react.development";
 import DisplayNotes from "./DisplayNotes";
-import './notes.css'
+import "./notes.css";
 const CreateNotes = () => {
   const [heading, setHeading] = useState("");
   const [description, setDescription] = useState("");
 
-  const [allnotes , setAllnotes] = useState([]);
-
+  const [allnotes, setAllnotes] = useState([]);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
 
-      e.preventDefault();
+    if (heading !== "" && description !== "") {
+      const notes = {
+        heading: heading,
+        description: description,
+      };
 
-      if(heading !== ""  && description !== ""){
+      console.log(notes);
 
-           const notes = {
-                  
-               heading : heading,
-               description :description,
-                
-           }
+      setAllnotes((prev) => {
+        return [...prev, notes];
+      });
 
-           console.log(notes);
+      console.log(typeof allnotes);
 
-           setAllnotes((prev) => {
-                return [...prev, notes]
-           });
+      console.log(allnotes);
 
+      console.log("clicked", allnotes);
+    }
 
-           console.log(typeof(allnotes));
+    setDescription("");
+    setHeading("");
+  };
 
-           console.log(allnotes);
-
-
-
-               console.log('clicked' , allnotes);
-
-      }
-
-      setDescription('');
-      setHeading('');
-
-             
-  }
-
-  
-     
   return (
     <>
-    
       <div className="container__notes">
         <h3>Create Notes</h3>
 
-         <form required autoComplete="off" onSubmit={handleSubmit}>
+        <form required autoComplete="off" onSubmit={handleSubmit}>
+          <div className="create__notes">
+            <input
+              type="text"
+              placeholder="Enter Title.."
+              value={heading}
+              onChange={(e) => setHeading(e.target.value)}
+            />
 
-             <div className="create__notes">
+            {/* <span>Add description</span> */}
 
-                  <input type='text' placeholder='Enter Title..' value={heading}  onChange={(e) =>  setHeading(e.target.value)}/>
+            <textarea
+              placeholder="Add description.."
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></textarea>
+          </div>
 
-                  {/* <span>Add description</span> */}
+          <button type="submit" className="notes__submit">
+            <i class="fas fa-plus"></i>
+          </button>
 
-                <textarea placeholder="Add description.." value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
-
-               
-
-             </div>
-
-             <button type='submit' className="notes__submit">
-
-               <i class="fas fa-plus"></i>
-
-       </button>
-
-         </form>
+          <DisplayNotes allnotes={allnotes} setAllnotes={setAllnotes} />
+        </form>
       </div>
 
-      <DisplayNotes  />
+    
     </>
   );
 };
