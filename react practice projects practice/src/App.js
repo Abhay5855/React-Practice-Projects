@@ -3,6 +3,9 @@ import './App.css';
 import Birthday from './birthday/Birthday';
 import ExpenseContainer from './expense_tracker.js/ExpenseContainer';
 import Reducer from './hooks/Reducer';
+import Effect from './hooks/useEffect/Effect';
+import Batching from './hooks/useState/Batching';
+import StateCounter from './hooks/useState/StateCounter';
 import MyMap from './localeai/MyMap';
 import Memo from './memo/Memo';
 import NotesContainer from './notes-app/NotesContainer';
@@ -74,7 +77,15 @@ function App() {
 
       {/* <NotesContainer /> */}
 
-      <Reducer />
+      {/* <Reducer /> */}
+
+      {/* <StateCounter /> */}
+
+
+      {/* <Effect /> */}
+
+
+      <Batching />
 
     
     </div>
