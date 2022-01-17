@@ -12,10 +12,10 @@ function PropsEffect() {
     return (
         <div>
 
-            <input value={time} onChange={() => setTime(e.target.value)}/>
+            <input value={time} onChange={(e) => setTime(e.target.value)}/>
           
 
-          <PropsCounter  time={time}/>
+             <PropsCounter  time={time}/>
 
             
         </div>

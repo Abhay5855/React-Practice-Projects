@@ -1,38 +1,22 @@
+import React, {useState, useEffect } from "react";
 
 
-import React, { useEffect } from 'react'
-import StateCounter from '../useState/StateCounter';
- 
-function PropsCounter({time}) {
+function PropsCounter({ time }) {
+  const [count, setCount] = useState(0);
 
-      const [count , setCount] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((count) => count + 1);
+    }, time);
 
+    return () => clearInterval(interval);
+  }, []);
 
-    useEffect(() => {
-           const interval = setInterval(() => {
-
-               StateCounter(count => count + 1);
-               
-           }, time);
-    })
-
-
-    
-
-
-
-
-
-
-    return (
-        <div>
-              
-
-         
-
-            
-        </div>
-    )
+  return (
+    <div>
+      <h3>{count}</h3>
+    </div>
+  );
 }
 
-export default PropsCounter
+export default PropsCounter;

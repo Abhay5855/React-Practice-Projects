@@ -5,6 +5,8 @@ import Display_Component from './display_undispaly/Display_Component';
 import ExpenseContainer from './expense_tracker.js/ExpenseContainer';
 import Reducer from './hooks/Reducer';
 import Effect from './hooks/useEffect/Effect';
+import PropsCounter from './hooks/useEffect/PropsCounter';
+import PropsEffect from './hooks/useEffect/PropsEffect';
 import Batching from './hooks/useState/Batching';
 import StateCounter from './hooks/useState/StateCounter';
 import MyMap from './localeai/MyMap';
@@ -88,7 +90,9 @@ function App() {
 
       {/* <Batching /> */}
 
-      <Display_Component />
+      {/* <Display_Component /> */}
+
+      <PropsEffect />
 
     
     </div>
