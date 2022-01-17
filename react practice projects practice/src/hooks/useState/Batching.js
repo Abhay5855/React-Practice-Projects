@@ -34,7 +34,7 @@ function BatchingChild() {
 
         let [count , setCount] = useState(0);
         return (
-            <div>
+            <div onClick={() => setCount(count + 1)}>
 
 
                 Child clicked {count} times.

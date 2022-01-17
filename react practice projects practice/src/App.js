@@ -1,6 +1,7 @@
 // import { useState } from 'react/cjs/react.development';
 import './App.css';
 import Birthday from './birthday/Birthday';
+import Display_Component from './display_undispaly/Display_Component';
 import ExpenseContainer from './expense_tracker.js/ExpenseContainer';
 import Reducer from './hooks/Reducer';
 import Effect from './hooks/useEffect/Effect';
@@ -85,7 +86,9 @@ function App() {
       {/* <Effect /> */}
 
 
-      <Batching />
+      {/* <Batching /> */}
+
+      <Display_Component />
 
     
     </div>
